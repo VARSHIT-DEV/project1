@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Stock Trend Analyzer</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <header>
+    <h1>📊 Stock Trend Analyzer</h1>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">Services</a>
+      <a href="#">About</a>
+      <a href="#">Login</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="analyzer">
+      <h2>📈 Analyze Stock Trends</h2>
+      <input type="text" id="stockSymbol" placeholder="Enter Stock Symbol (e.g. AAPL)" />
+      <button onclick="fetchStockData()">Analyze</button>
+      
+      <div class="alert-box">
+        <h3>🔔 Set Alert</h3>
+        <input type="number" id="alertPrice" placeholder="Alert if price crosses..." />
+      </div>
+
+      <div id="stockResult"></div>
+      <canvas id="stockChart" width="400" height="200"></canvas>
+    </section>
+
+    <section class="converter">
+      <h2>💱 Currency Converter</h2>
+      <input type="number" id="amount" placeholder="Enter amount" />
+      <div class="currency-selects">
+        <select id="fromCurrency">
+          <option value="USD">USD</option>
+          <option value="INR">INR</option>
+          <option value="EUR">EUR</option>
+        </select>
+        <span>to</span>
+        <select id="toCurrency">
+          <option value="INR">INR</option>
+          <option value="USD">USD</option>
+          <option value="EUR">EUR</option>
+        </select>
+      </div>
+      <button onclick="convertCurrency()">Convert</button>
+      <div id="convertedResult"></div>
+    </section>
+
+    <section class="indices">
+      <h2>🌐 Major Indices</h2>
+      <ul id="indicesList">
+        <li><strong>NIFTY 50:</strong> <span id="niftyValue">Loading...</span></li>
+        <li><strong>SENSEX:</strong> <span id="sensexValue">Loading...</span></li>
+      </ul>
+    </section>
+
+    <section class="news">
+      <h2>📰 Financial News</h2>
+      <ul id="newsFeed">
+        <li>Loading news...</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 StockTrend Analyzer. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
